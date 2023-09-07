@@ -1,0 +1,109 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.nav-btn {
+  color: rgb(126, 48, 199);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  color: white;
+  background-color: rgb(86, 27, 141);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(147, 78, 212);
+}
+
+section {
+  width: 60%;
+  margin: auto;
+}
+
+section p {
+  font-size: larger;
+}
+
+section div {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2 {
+  font-size: 150%;
+}
+
+#screen-1 {
+  text-align: center;
+}
+
+#screen-2 .btn {
+  display: block;
+  text-align: left;
+  padding-left: 2%;
+  width: 50%;
+  margin-bottom: 1%;
+}
+
+#screen-3 form {
+  margin-bottom: 2rem;
+}
+
+#screen-3 form input {
+  height: 2.1rem;
+  text-indent: 0.5rem;
+}
+
+h3 {
+  font-size: large;
+  color: gray;
+  font-style: italic;
+  font-weight: lighter;
+  margin-left: 20%;
+}
+
+h4 {
+  color: red;
+  display: none;
+}
+
+#screen-4 ol {
+  background-color: rgb(213, 199, 216);
+  padding: 0.6rem 2rem;
+}
+
+#screen-2,
+#screen-3,
+#screen-4 {
+  display: none;
+}
+
+/* Responsive design */
+@media screen and (max-width: 940px) {
+  section {
+    width: 80%;
+  }
+
+  #screen-2 .btn {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  section {
+    width: 95%;
+  }
+
+  #screen-3 form input {
+    width: 30%;
+  }
+}
