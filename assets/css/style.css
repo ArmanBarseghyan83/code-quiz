@@ -1,3 +1,4 @@
+/* Header styles */
 nav {
   display: flex;
   justify-content: space-between;
@@ -11,6 +12,11 @@ nav {
   cursor: pointer;
 }
 
+.nav-btn:hover {
+  color: rgb(86, 27, 141)
+}
+
+/* Sections styles */
 .btn {
   color: white;
   background-color: rgb(86, 27, 141);
@@ -21,7 +27,7 @@ nav {
 }
 
 .btn:hover {
-  background-color: rgb(147, 78, 212);
+  background-color: rgb(126, 48, 199);
 }
 
 section {

@@ -18,6 +18,14 @@ let timer;
 startQuizBtn.addEventListener("click", () => {
   timer = setInterval(() => {
     timeLeft.textContent--;
+
+    if (timeLeft.textContent <= 0) {
+      clearInterval(timer);
+      screen2.style.display = "none";
+      screen3.style.display = "block";
+      document.querySelector("#screen-3 span").textContent =
+        timeLeft.textContent;
+    }
   }, 1000);
 
   let index = 0;
@@ -57,7 +65,7 @@ let highScores = JSON.parse(localStorage.getItem("scores")) || [];
 let createHighScores = () => {
   highScores.forEach((score) => {
     let liEl = document.createElement("li");
-    liEl.textContent = score;
+    liEl.textContent = score.toUpperCase();
     olEl.append(liEl);
   });
 
@@ -67,9 +75,11 @@ let createHighScores = () => {
 formBtn.addEventListener("click", (event) => {
   event.preventDefault();
 
-  if ((input.value === "")) {
-    message.textContent = "Please enter your initials!"
-    return;
+  if (input.value === "") {
+    message.textContent = "Please enter your initials!";
+  } else if (!input.value.match(/^[A-Za-z]+$/)) {
+    input.value = "";
+    message.textContent = "Must be a letter!";
   } else {
     message.textContent = "";
     screen3.style.display = "none";
@@ -81,6 +91,7 @@ formBtn.addEventListener("click", (event) => {
     localStorage.setItem("scores", JSON.stringify(highScores));
 
     olEl.textContent = "";
+
     createHighScores();
   }
 });
